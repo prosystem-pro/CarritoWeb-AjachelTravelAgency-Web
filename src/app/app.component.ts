@@ -202,6 +202,9 @@ export class AppComponent implements OnInit {
   esReporteTiempoPagina(): boolean {
     return this.router.url === '/reporte-tiempo-pagina';
   }
+  esMantenimiento(): boolean {
+    return this.router.url === '/mantenimiento';
+  }
 
   mostrarSidebar(): boolean {
     return !(

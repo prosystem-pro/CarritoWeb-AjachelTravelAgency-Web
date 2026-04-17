@@ -1,6 +1,6 @@
-<app-header *ngIf="!esLogin() && !esProductos()" />
+<app-header *ngIf="!esLogin() && !esProductos() &&!esMantenimiento()" />
 <router-outlet></router-outlet>
 <app-sidebar-red-social
-    *ngIf="!esLogin() && !esProductos() && !esContacto() && !esOtro() && !carritoAbierto && mostrarSidebar()" />
+    *ngIf="!esLogin() && !esProductos() && !esContacto() && !esOtro() && !carritoAbierto && mostrarSidebar() &&!esMantenimiento()" />
 <app-footer
-    *ngIf="!esLogin() && !esProductos()  && !esReporteProducto() &&!esReporteVista() &&!esReporteRedSocial() &&!esReporteTiempoPagina()" />
+    *ngIf="!esLogin() && !esProductos()  && !esReporteProducto() &&!esReporteVista() &&!esReporteRedSocial() &&!esReporteTiempoPagina() &&!esMantenimiento()" />
