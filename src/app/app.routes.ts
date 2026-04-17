@@ -18,7 +18,7 @@ import { SpinnerGlobalComponent } from './Componentes/spinner-global/spinner-glo
 
 export const routes: Routes = [
   { path: '', redirectTo: '/mantenimiento', pathMatch: 'full' },
-  { path: '**', redirectTo: 'mantenimiento' },
+
 
   // { path: '', redirectTo: '/nosotros', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
@@ -41,5 +41,6 @@ export const routes: Routes = [
   { path: 'reporte-tiempo-pagina', component: ReporteTiempoPaginaComponent, canActivate: [AutorizacionRuta] },
   { path: 'pago', component: PagoComponent, canActivate: [AutorizacionRuta] },
 
+  { path: '**', redirectTo: 'mantenimiento' },
   // { path: '**', redirectTo: 'nosotros' },
 ];
