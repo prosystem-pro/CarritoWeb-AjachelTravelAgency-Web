@@ -1,6 +1,6 @@
 <div class="container-fluid p-0" *ngIf="portadaData">
     <!-- Elementos decorativos de trigo con posiciones mejoradas -->
-    <div class="trigo-izquierda d-none d-md-block">
+    <div class="trigo-izquierda d-none">
         <img [src]="portadaData.UrlImagenPortadaIzquierdo || ''" alt="Izquierda" class="img-fluid">
         <button *ngIf="modoEdicion && Permiso.TienePermiso('EmpresaPortada', 'SubirImagen')" class="btn btn-sm btn-light trigo-edit-button" style="top: 0; left: 0;"
             title="Cambiar imagen">
@@ -12,7 +12,7 @@
         </button>
     </div>
 
-    <div class="trigo-derecho d-none d-md-block">
+    <div class="trigo-derecho d-none">
         <img [src]="portadaData.UrlImagenPortadaDerecho || ''" alt="Derecho" class="img-fluid">
         <button *ngIf="modoEdicion && Permiso.TienePermiso('EmpresaPortada', 'SubirImagen')" class="btn btn-sm btn-light trigo-edit-button" style="top: 0; right: 0;"
             title="Cambiar imagen">
@@ -25,7 +25,7 @@
     </div>
 
     <!-- Versión móvil de los elementos decorativos (opcional, para mejor control) -->
-    <div class="trigo-izquierda d-md-none">
+    <div class="trigo-izquierda d-none">
         <img [src]="portadaData.UrlImagenPortadaIzquierdo || 'trigoIzquierda.png'" alt="Trigo Izquierda"
             class="img-fluid">
         <button *ngIf="modoEdicion && Permiso.TienePermiso('EmpresaPortada', 'SubirImagen')" class="btn btn-sm btn-light trigo-edit-button" style="top: 0; left: 0;">
@@ -37,7 +37,7 @@
         </button>
     </div>
 
-    <div class="trigo-derecho d-md-none">
+    <div class="trigo-derecho d-none">
         <img [src]="portadaData.UrlImagenPortadaDerecho || 'trigoDerecho.jpg'" alt="Trigo Derecho" class="img-fluid">
         <button *ngIf="modoEdicion && Permiso.TienePermiso('EmpresaPortada', 'SubirImagen')" class="btn btn-sm btn-light trigo-edit-button" style="top: 0; right: 0;">
             <label for="trigoDerechoUploadMobile" style="margin-bottom: 0; cursor: pointer;">
