@@ -127,8 +127,9 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:beforeunload', ['$event'])
   @HostListener('window:pagehide', ['$event'])
-  registrarSalida(): void {
+  registrarSalida(event: Event): void {
     clearInterval(this.intervaloActualizacion);
+
     if (this.codigoReporteTiempoPagina == null) return;
 
     const tiempoFinalMs = Date.now() - this.horaEntrada;
@@ -141,11 +142,11 @@ export class AppComponent implements OnInit {
     };
 
     const blob = new Blob([JSON.stringify(datos)], { type: 'application/json' });
-    const exito = navigator.sendBeacon(
+
+    navigator.sendBeacon(
       Entorno.ApiUrl + 'reportetiempopagina/editar',
       blob
     );
-
   }
 
   formatearTiempo(ms: number): string {
@@ -204,7 +205,7 @@ export class AppComponent implements OnInit {
 
   mostrarSidebar(): boolean {
     return !(
-      this.Permiso.TienePermiso('RedSocial','VerUnidad') &&
+      this.Permiso.TienePermiso('RedSocial', 'VerUnidad') &&
       this.router.url.startsWith('/reporte')
     );
   }

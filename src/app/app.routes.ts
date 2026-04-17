@@ -12,11 +12,15 @@ import { ReporteVistaComponent } from './Paginas/Inicio/reporte-vista/reporte-vi
 import { ReporteRedSocialComponent } from './Paginas/Inicio/reporte-red-social/reporte-red-social.component';
 import { ReporteTiempoPaginaComponent } from './Paginas/Inicio/reporte-tiempo-pagina/reporte-tiempo-pagina.component';
 import { PagoComponent } from './Paginas/Inicio/pago/pago.component';
+import { MantenimientoComponent } from './Paginas/mantenimiento/mantenimiento.component';
 import { LoginGuard } from './Servicios/loginGuard';
 import { SpinnerGlobalComponent } from './Componentes/spinner-global/spinner-global.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/nosotros', pathMatch: 'full' },
+  { path: '', redirectTo: '/mantenimiento', pathMatch: 'full' },
+  { path: '**', redirectTo: 'mantenimiento' },
+
+  // { path: '', redirectTo: '/nosotros', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
 
   //Rutas publicas
@@ -27,6 +31,7 @@ export const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'otro', component: OtroComponent },
   { path: 'spinner-global', component: SpinnerGlobalComponent },
+  { path: 'mantenimiento', component: MantenimientoComponent },
 
   //Rutas protegidas
   { path: 'reporte-producto', component: ReporteProductoComponent, canActivate: [AutorizacionRuta] },
@@ -36,5 +41,5 @@ export const routes: Routes = [
   { path: 'reporte-tiempo-pagina', component: ReporteTiempoPaginaComponent, canActivate: [AutorizacionRuta] },
   { path: 'pago', component: PagoComponent, canActivate: [AutorizacionRuta] },
 
-  { path: '**', redirectTo: 'nosotros' },
+  // { path: '**', redirectTo: 'nosotros' },
 ];
